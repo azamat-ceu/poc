@@ -13,7 +13,7 @@ namespace WindowsFormsApp3
 {
     public partial class Form2 : Form
     {
-        SqlConnection con = new SqlConnection("Data Source=303-14;Initial Catalog=azam;Integrated security=true;");
+        SqlConnection con = new SqlConnection("Data Source=303-14;Initial Catalog=azam;Integrated security=true;");//подключение БД
         public Form2()
         {
             InitializeComponent();
@@ -42,7 +42,7 @@ namespace WindowsFormsApp3
         private void Form2_Load(object sender, EventArgs e)
         {
             con.Open();
-            SqlCommand com = new SqlCommand($"Select * From coeefs, grade where coeefs.id = '{id}' and coeefs.id = grade.id", con);
+            SqlCommand com = new SqlCommand($"Select * From coeefs, grade where coeefs.id = '{id}' and coeefs.id = grade.id", con);//поиск коэффициентов
             SqlDataReader dr = com.ExecuteReader();
             if (dr.HasRows)
             {
